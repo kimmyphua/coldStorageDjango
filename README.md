@@ -48,8 +48,7 @@ from django.urls import path
 from . import views # this is the views.py file within this directory
 
 urlpatterns = [
-    path("", views.index, name="index"),
-    path("show/", views.show, name="show")
+    path("", views.index, name="index")
 ]
 
 ```
