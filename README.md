@@ -66,5 +66,9 @@ def index(request):
 
 
 ### Note
-You need to install teh dependencies 
+You need to install the dependencies:  
 `pipenv install requests beautifulsoup4`
+
+
+## Author
+Ebere Iweala.
