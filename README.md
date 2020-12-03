@@ -5,6 +5,7 @@
 1. Clone this repository
 1. Create a django project `django-admin startproject shoppingmall`
 1. Install Django `pipenv install django`
+1. Install BeautifulSoup4 and requests for scrapping `pipenv install requests beautifulsoup4`
 1. Start python virtual environment `pipenv shell`
 1. Create a django app `python manage.py startapp coldstorage`
 
@@ -62,3 +63,8 @@ def index(request):
 
 
 1. Note you should create a `templates/coldstorage/index.html` to get started 
+
+
+### Note
+You need to install teh dependencies 
+`pipenv install requests beautifulsoup4`
