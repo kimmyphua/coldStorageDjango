@@ -47,10 +47,10 @@ urlpatterns = [
 ```python
 from django.urls import path
 
-from . import views # this is the views.py file within this directory
+from .views import * # this is the views.py file within this directory
 
 urlpatterns = [
-    path("", views.index, name="index")
+    path("", index, name="index")
 ]
 
 ```
