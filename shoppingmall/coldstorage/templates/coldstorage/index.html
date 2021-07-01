@@ -1,0 +1,43 @@
+{% extends 'coldstorage/base.html' %}
+
+{% block body %}
+
+
+<div class="container">
+<div class="row text-center">
+<h3 class="font-monospace py-2">Welcome to COLD STORAGE</h3>
+
+
+<form method ="post">
+{% csrf_token %}
+<input name="q" />
+<button class="btn bg-light text-dark border border-dark" type = "submit"> Search </button>
+</form>
+</div>
+    <div class="row py-3 justify-content-center">
+
+        {% for food in foods%}
+            <div class="col-4">
+            <div class="card p-4 m-4 text-center">
+            <h4>{{food.name}}</h4>
+            <p>{{food.price}}</p>
+            <p><img class="w-50 h-50" src={{food.image}} /></p>
+            {% if food.brand != None %}
+                <img class="w-25 h-25" src={{food.brand}} alt="brand" />
+            {% endif %}
+             {% if food.halal != None %}
+                <p><img class="w-25 h-25" src={{food.halal}} alt="halal"/></p>
+            {% endif %}
+                
+                  <a href={{food.url}}> Click to See </a>
+            {% comment %} Halal :  <img class="w-50" src={{food.halal}} /> </p> {% endcomment %}
+            </div>
+            </div>
+   
+
+        {% endfor %}    
+
+     </div>
+</div>
+
+{% endblock body %}
