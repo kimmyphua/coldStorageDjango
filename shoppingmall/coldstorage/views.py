@@ -26,6 +26,11 @@ def index(request):
         else:
             halal = None
 
+        if food.find("div", class_="category-name"):
+            brandname = food.find("div", class_="category-name").text
+        else:
+            brandname = None
+
         if food.find("span", class_="l-brand-blurb"):
             print(food.find("span", class_="l-brand-blurb").find("img").get("src"))
             brand = food.find("span", class_="l-brand-blurb").find("img").get("src")
@@ -43,7 +48,8 @@ def index(request):
                             "image" : image,
                             "url" : url,
                             "halal" : halal,
-                            "brand" : brand
+                            "brand" : brand,
+                            "brandname" : brandname
                             })
 
     return render(request, "coldstorage/index.html", { "foods" : list_of_food})
